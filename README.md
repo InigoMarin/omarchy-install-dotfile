@@ -1,4 +1,4 @@
-# MPD Installation Script (`omarchy-install-mpd.sh`)
+# omarchy-install-mpd
 
 This script automates the installation and configuration of the
 Music Player Daemon (MPD) and related tools in Omarchy.
@@ -30,4 +30,3 @@ Music Player Daemon (MPD) and related tools in Omarchy.
     * Adds the alias `m` for the `rmpc` client to your `.bashrc`.
 
 7. Replaces Omarchhy Hypr Spotify bindings for MPD control with `rmpc`.
-# omarchy-install-mpd
