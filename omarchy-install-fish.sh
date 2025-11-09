@@ -46,6 +46,11 @@ if ! grep -q "starship init" ~/.config/fish/config.fish 2>/dev/null; then
     echo "starship init fish | source" >> ~/.config/fish/config.fish
 fi
 
+# Install m function
+echo "Installing m function to fish..."
+mkdir -p ~/.config/fish/functions
+cp m.fish ~/.config/fish/functions/m.fish
+
 echo ""
 echo "Please log out and log back in for the changes to take effect."
 echo "Or run 'exec fish' to start using fish in the current terminal."
