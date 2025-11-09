@@ -25,10 +25,10 @@ sudo chsh -s "$FISH_PATH" "$USER"
 echo ""
 echo "Fish shell installed and set as default!"
 
-# Install zoxide and starship
+# Install zoxide, starship and eza
 echo ""
-echo "Installing zoxide and starship..."
-omarchy-pkg-add zoxide starship
+echo "Installing zoxide, starship and eza..."
+omarchy-pkg-add zoxide starship eza
 
 # Create fish config directory if it doesn't exist
 mkdir -p ~/.config/fish
@@ -47,9 +47,18 @@ if ! grep -q "starship init" ~/.config/fish/config.fish 2>/dev/null; then
 fi
 
 # Install m function
-echo "Installing m function to fish..."
+echo "Installing m function..."
 mkdir -p ~/.config/fish/functions
 cp m.fish ~/.config/fish/functions/m.fish
+
+# Configure abbreviations
+echo "Configuring abbreviations..."
+if ! grep -q "abbr -a ls eza" ~/.config/fish/config.fish 2>/dev/null; then
+    echo "abbr -a ls eza" >> ~/.config/fish/config.fish
+fi
+
+echo "Installing Tokyo Night theme..."
+fish -c "fisher install vitallium/tokyonight-fish && fish_config theme save 'TokyoNight Night'"
 
 echo ""
 echo "Please log out and log back in for the changes to take effect."
