@@ -53,7 +53,7 @@ echo "----------------------------------------"
 
 # Install Gemini CLI
 echo "Installing Gemini CLI..."
-npm install -g gemini-cli
+npm install -g @google/gemini-cli
 if [ $? -ne 0 ]; then
   echo "Error: Gemini CLI installation failed."
   exit 1
