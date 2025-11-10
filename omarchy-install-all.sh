@@ -27,6 +27,17 @@ if [ $? -ne 0 ]; then
 fi
 
 echo ""
+echo "-----------------------------------"
+echo "Step 3: Installing AI CLIs..."
+echo "-----------------------------------"
+./omarchy-install-ai-cli.sh
+
+if [ $? -ne 0 ]; then
+    echo "Error: AI CLIs installation failed"
+    exit 1
+fi
+
+echo ""
 echo "==================================="
 echo "All installations completed!"
 echo "==================================="
